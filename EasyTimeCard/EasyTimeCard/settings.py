@@ -31,9 +31,9 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mngr',                      
-        'USER': 'hapa1',
-        'PASSWORD': 'kayla123',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '117tbPG1994!',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -43,13 +43,15 @@ DATABASES = {
 # Application definition
 
 INSTALLED_APPS = [
+    'login.apps.LoginConfig', #this is needed for each page/app
+    'timecard.apps.TimecardConfig', #this is needed for each page/app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+
 ]
 
 MIDDLEWARE = [
@@ -62,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'EasyTimeCard.urls'
 
 TEMPLATES = [
     {
@@ -80,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'EasyTimeCard.wsgi.application'
 
 
 # Database
