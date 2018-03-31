@@ -11,7 +11,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Free Time Card Calculator | Timesheet Calculator | Calculate Timecard Hours</title>
         <link href="https://www.redcort.com/addons/shared_addons/themes/RedcortSoftwareInc/assets/images/favicon.ico"
               rel="shortcut icon">
         <link href="https://www.redcort.com/addons/shared_addons/themes/RedcortSoftwareInc/assets/css/all.v1.2.5.min.css"
@@ -48,13 +47,7 @@
 
     <div class="resource-wrappper">
         <div class="row">
-            <div class="small-12 medium-12 large-10 large-offset-1 float-left columns"><p class="calc-sub-title">Total
-                your
-                weekly timecard hours in <a
-                        href="https://www.redcort.com/blog/2016/12/hours-and-minutes-versus-decimal-time"
-                        target="_blank">decimal
-                    format</a> for payroll.</p>
-                <div class="calcWrap">
+            <div class="small-12 medium-12 large-10 large-offset-1 float-left columns"><p class="calc-sub-title">
                     <form name="ivForm" onsubmit="return false;">
                         <div id="error_chunk"></div>
                         <table id="calculator" class="responsive">
@@ -125,34 +118,27 @@
                             </tr>
                             </tfoot>
                         </table>
-                        <div id="version">
-                            <div>Version 5.0.2</div>
-                        </div>
-                        <div id="social">
-                            <div id="like-btn">
-                                <share-button></share-button>
-                            </div>
-                        </div>
+                    <!-- Textarea -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textarea">Comments</label>
+                  <div class="col-md-4">
+                    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+                  </div>
+                </div>
                         <input class="calc-buttons print" type="button" value="PRINT"
                                onclick="window.print();return false;"> <input class="calc-buttons-outline calculate"
                                                                               type="button" name="mcalc"
-                                                                              value="CALCULATE"
+                                                                              value="SUBMIT"
                                                                               onclick=" f = this.form; for(var i=0; i&lt;f.elements.length; i++){ if(f.elements[i].name.match(/start_hr/)){ calc(f.elements[i]); }} cal_days_sum()">
                         <input class="calc-buttons-outline reset" type="reset" value="CLEAR ALL"
                                onclick="if(confirm('Reset all fields?')){ location.href = location.href; } else{ return false; }">
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="calc-text">
-        <div class="row">
-            <div class="small-12 medium-8 medium-offset-2 center columns"><p class="small-note">Our free timecard
-                calculator
-                is provided without charge and without warranty as to its fitness or usefulness for any particular task.
-                &copy;Copyright 2017 Redcort Software Inc. All rights reserved.</p></div>
-        </div>
-    </div>
+
 
 
 </head>
@@ -160,42 +146,41 @@
 
 </body>
 </html>
-<!--[if lt IE 9]><script src="https://www.redcort.com/addons/shared_addons/themes/RedcortSoftwareInc/assets/js/jquery.1.12.4.min.js"></script>
-<![endif]-->
+
 <script src="https://www.redcort.com/addons/shared_addons/themes/RedcortSoftwareInc/assets/js/all.v1.0.1.min.js"></script>
 <script src="https://www.redcort.com/addons/shared_addons/themes/RedcortSoftwareInc/assets/js/calc/share-button.v1.3.min.js"></script>
-<script>/* Create a configuration object */
-var ss360Config = {
-    /* Your site id */
-    siteId: "www.redcort.com",
-    themeColor: '#888989', /* The selector to the input field (search box) */
-    searchBoxSelector: "input[name='q']",
-    /********* Search Suggestions *********/ showSearchSuggestions: true,
-    suggestionsStyle: {
-        text: {color: '#888989',},
-        background: {color: '#ffffff'},
-        padding: '6px',
-        distanceFromTop: '0px',
-        border: {color: '#dddddd', radius: '3px',},
-    },
-    showImagesSuggestions: false,
-    numSuggestions: 5,
-    maxQuerySuggestions: 3,
-    minChars: 3,
-    highlight: true,
-    /********* Search Results *********/ searchResults: undefined,
-    searchResultsCaption: '#COUNT# results for query "#QUERY#"',
-    navigation: 'top',
-    highlightQueryTerms: true,
-    showImagesResults: true,
-    showResultLink: false,
-    queryCorrectionText: 'Did you mean "#CORRECTION#"?',
-    noResultsText: 'Sorry, no matches were found for your query.',
-    otherContentGroupName: 'Other',
-    ignoreOtherContentGroup: false,
-    groupResults: true,
-    loader: {type: 'circle'}
-};</script>
+{#<script>/* Create a configuration object */#}
+{#var ss360Config = {#}
+{#    /* Your site id */#}
+{#    siteId: "www.redcort.com",#}
+{#    themeColor: '#888989', /* The selector to the input field (search box) */#}
+{#    searchBoxSelector: "input[name='q']",#}
+{#    /********* Search Suggestions *********/ showSearchSuggestions: true,#}
+{#    suggestionsStyle: {#}
+{#        text: {color: '#888989',},#}
+{#        background: {color: '#ffffff'},#}
+{#        padding: '6px',#}
+{#        distanceFromTop: '0px',#}
+{#        border: {color: '#dddddd', radius: '3px',},#}
+{#    },#}
+{#    showImagesSuggestions: false,#}
+{#    numSuggestions: 5,#}
+{#    maxQuerySuggestions: 3,#}
+{#    minChars: 3,#}
+{#    highlight: true,#}
+{#    /********* Search Results *********/ searchResults: undefined,#}
+{#    searchResultsCaption: '#COUNT# results for query "#QUERY#"',#}
+{#    navigation: 'top',#}
+{#    highlightQueryTerms: true,#}
+{#    showImagesResults: true,#}
+{#    showResultLink: false,#}
+{#    queryCorrectionText: 'Did you mean "#CORRECTION#"?',#}
+{#    noResultsText: 'Sorry, no matches were found for your query.',#}
+{#    otherContentGroupName: 'Other',#}
+{#    ignoreOtherContentGroup: false,#}
+{#    groupResults: true,#}
+{#    loader: {type: 'circle'}#}
+{#{;</script>#}
 <script src="https://sitesearch360.com/cdn/sitesearch360-v9.min.js"></script>
 <script>
     jQuery(function () {
