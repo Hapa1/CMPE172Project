@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% block body %}
 <head>
     <meta charset="UTF-8">
     <title>Time Card</title>
     <h1>
         <center>Time Card</center>
     </h1>
+    <h3 style="text-align:right; margin-right:20px"> <a href="/login/logout">logout</a></h3>
 
     <head>
         <meta charset="utf-8">
@@ -159,7 +159,11 @@
 <body>
 
 </body>
-</html>
+
+
+
+
+{% endblock %}
 <!--[if lt IE 9]><script src="https://www.redcort.com/addons/shared_addons/themes/RedcortSoftwareInc/assets/js/jquery.1.12.4.min.js"></script>
 <![endif]-->
 <script src="https://www.redcort.com/addons/shared_addons/themes/RedcortSoftwareInc/assets/js/all.v1.0.1.min.js"></script>
@@ -196,7 +200,6 @@ var ss360Config = {
     groupResults: true,
     loader: {type: 'circle'}
 };</script>
-<script src="https://sitesearch360.com/cdn/sitesearch360-v9.min.js"></script>
 <script>
     jQuery(function () {
         new ShareButton
