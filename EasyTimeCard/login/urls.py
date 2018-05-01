@@ -1,9 +1,10 @@
 from django.conf.urls import url
+from django.conf.urls import include
 from . import views
-from django.contrib.auth.views import login
 
 urlpatterns = [
-    #url(r'^$',views.index, name='index'),
-    url(r'$',login, {'template_name': 'login/index.html'}),
-    url(r'$', views.index, {'next_page':'login: login'})
+    url(r'^$',views.index, name='index'),
+    url(r'^dashboard', views.dashboard),
+    url(r'^', include('django.contrib.auth.urls', namespace='auth')),
+    url(r'^', include('social_django.urls', namespace='social')),
 ]
