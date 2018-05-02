@@ -23,8 +23,8 @@
         <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
         <img align="left" class="fb-image-profile thumbnail" src="{{ auth0User.extra_data.picture }}" alt="Profile image example"/>
         <div class="fb-profile-text">
-            <h1>Welcome!</h1>
-            <h2><bold>{{ user.username }}</bold></h2>
+           <div class="col-sm-7"> <h1>Welcome!</h1></div> <div class="col-sm-1"><h3><a style="width:20%;" href="/logout">Logout</a></h3></div>
+            <div class="col-sm-4"><h2><bold>{{ user.username }}</bold></h2></div>
 
         </div>
     </div>
@@ -59,7 +59,7 @@
 
 </div>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <style>
 .col-lg-6{
     left: 300px;

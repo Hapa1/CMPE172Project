@@ -17,7 +17,6 @@ from django.conf.urls import include, url
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
-import django_saml2_auth.views
 
 
 urlpatterns = [
