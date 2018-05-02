@@ -21,15 +21,15 @@ import django_saml2_auth.views
 
 
 urlpatterns = [
-    #url(r'^saml2_auth/', include('django_saml2_auth.urls')),
-    #url(r'^accounts/login/$', django_saml2_auth.views.signin),
-    #url(r'^admin/login/$', django_saml2_auth.views.signin),
-
-    #url(r'^admin/', admin.site.urls),
-    #url(r'^login/',include('login.urls')),
-    #url(r'^', include('login.urls')),
-    #url(r'^timecard/',include('timecard.urls')),
-    #url(r'^login/auth0$',include('login.urls')),
+    #     url(r'^saml2_auth/', include('django_saml2_auth.urls')),
+    #     url(r'^accounts/login/$', django_saml2_auth.views.signin),
+    #     url(r'^admin/login/$', django_saml2_auth.views.signin),
+    #
+    # url(r'^admin/', admin.site.urls),
+    # url(r'^login/',include('login.urls')),
+    # url(r'^', include('login.urls')),
+    # url(r'^timecard/',include('timecard.urls')),
+    # url(r'^login/auth0',include('login.urls')),
 
 
 
