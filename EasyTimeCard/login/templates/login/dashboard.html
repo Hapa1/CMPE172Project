@@ -1,14 +1,174 @@
-<div class="logged-in-box auth0-box logged-in">
-    <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1>
-    <img class="avatar" src="{{ auth0User.extra_data.picture }}"/>
-    <h2>Welcome {{ user.username }}</h2>
-    <pre>{{ userdata }}</pre>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<head>
+
+</head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<div class="container">
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="{{ auth0User.extra_data.picture }}" alt="Profile image example"/>
+        <div class="fb-profile-text">
+           <div class="col-sm-7"> <h1>Welcome!</h1></div> <div class="col-sm-1"><h3><a style="width:20%;" href="/logout">Logout</a></h3></div>
+            <div class="col-sm-4"><h2><bold>{{ user.username }}</bold></h2></div>
+
+        </div>
+    </div>
+</div> <!-- /container -->
+
+
+<div class="container">
+    <div class="row">
+  <div class="col-lg-6">
+         <h1 style="text-align: center" >Employees Search</h1>
+   <div class="input-group"  >
+
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Name <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+    {#          <li><a href="#">Name</a></li>#}
+          <li><a href="#">Employee ID</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      <input type="text" class="form-control" aria-label="...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search" aria-hidden="true">
+
+            </span>
+        </button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+</div><!-- /.row -->
+
 </div>
 
-<div class="logged-in-box auth0-box logged-in">
-    <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1>
-    <img class="avatar" src="{{ auth0User.extra_data.picture }}"/>
-    <h2>Welcome {{ user.username }}</h2>
-    <pre>{{ userdata }}</pre>
-    <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
-</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<style>
+.col-lg-6{
+    left: 300px;
+}
+
+
+{#search bar#}
+{#body {#}
+{#    padding-top: 50px;#}
+{#}#}
+{##}
+{#.col-md-12{#}
+{#    padding-top: 100px;#}
+{#    padding-bottom: 200px;#}
+{#}#}
+{#.dropdown.dropdown-lg .dropdown-menu {#}
+{#    margin-top: -1px;#}
+{#    padding: 6px 20px;#}
+{#}#}
+{#.input-group-btn .btn-group {#}
+{#    display: flex !important;#}
+{#}#}
+{#.btn-group .btn {#}
+{#    border-radius: 0;#}
+{#    margin-left: -1px;#}
+{#}#}
+{#.btn-group .btn:last-child {#}
+{#    border-top-right-radius: 4px;#}
+{#    border-bottom-right-radius: 4px;#}
+{#}#}
+{#.btn-group .form-horizontal .btn[type="submit"] {#}
+{#  border-top-left-radius: 4px;#}
+{#  border-bottom-left-radius: 4px;#}
+{#}#}
+{#.form-horizontal .form-group {#}
+{#    margin-left: 0;#}
+{#    margin-right: 0;#}
+{#}#}
+{#.form-group .form-control:last-child {#}
+{#    border-top-left-radius: 4px;#}
+{#    border-bottom-left-radius: 4px;#}
+{#}#}
+{##}
+{#@media screen and (min-width: 768px) {#}
+{#    #adv-search {#}
+{#        width: 500px;#}
+{#        margin: 0 auto;#}
+{#    }#}
+{#    .dropdown.dropdown-lg {#}
+{#        position: static !important;#}
+{#    }#}
+{#    .dropdown.dropdown-lg .dropdown-menu {#}
+{#        min-width: 500px;#}
+{#    }#}
+{#}#}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.container{
+{#    width: 1800px;#}
+}
+
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%;
+}
+
+@media (max-width:768px)
+{
+
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 9;
+    width: 20%;
+}
+}
+</style>
+
+{#<div style = "position:center"class="logged-in-box auth0-box logged-in">#}
+{#    <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1>#}
+{#    <img class="avatar" src="{{ auth0User.extra_data.picture }}"/>#}
+{#    <h2>Welcome {{ user.username }}</h2>#}
+{#    <pre>{{ userdata }}</pre>#}
+{#</div>#}
+
+{#<div class="logged-in-box auth0-box logged-in">#}
+{#    <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1>#}
+{#    <img class="avatar" src="{{ auth0User.extra_data.picture }}"/>#}
+{#    <h2>Welcome {{ user.username }}</h2>#}
+{#    <pre>{{ userdata }}</pre>#}
+{#    <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>#}
+{#</div>#}
+
