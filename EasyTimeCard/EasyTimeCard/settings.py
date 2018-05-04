@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'EasyTimeCard',
+    'Login',
 
 ]
 SOCIAL_AUTH_TRAILING_SLASH = False                    # Remove end slash from routes
