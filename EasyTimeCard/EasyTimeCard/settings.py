@@ -44,7 +44,7 @@ DATABASES = {
 
 INSTALLED_APPS = [
     'login', #this is needed for each page/app
-    'timecard.apps.TimecardConfig', #this is needed for each page/app
+    'timecard', #this is needed for each page/app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
