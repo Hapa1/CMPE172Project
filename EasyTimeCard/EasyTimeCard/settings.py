@@ -43,7 +43,7 @@ DATABASES = {
 # Application definition
 
 INSTALLED_APPS = [
-    'login.apps.LoginConfig', #this is needed for each page/app
+    'login', #this is needed for each page/app
     'timecard.apps.TimecardConfig', #this is needed for each page/app
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'EasyTimeCard',
-    'login',
+
 
 ]
 SOCIAL_AUTH_TRAILING_SLASH = False                    # Remove end slash from routes
