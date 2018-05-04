@@ -54,6 +54,7 @@ INSTALLED_APPS = [
    # 'django_saml2_auth',
     'social_django',
     'EasyTimeCard',
+    'login',
 
 ]
 
