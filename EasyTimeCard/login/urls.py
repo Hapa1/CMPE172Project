@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
     url(r'^$',views.index, name='index'),
     url(r'^dashboard', views.dashboard),
-    url(r'^', include('django.contrib.auth.urls', namespace='auth')),
-    url(r'^', include('social_django.urls', namespace='social')),
+    url(r'^', include('django.contrib.auth.urls', )),
+    url(r'^', include('social_django.urls', )),
 ]
