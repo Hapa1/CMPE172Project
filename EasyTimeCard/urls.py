@@ -27,6 +27,7 @@ urlpatterns = [
      url(r'^admin/', admin.site.urls),
      #url(r'^login/',include('login.urls')),
      url(r'^', include('login.urls')),
+     url(r'^users/', include('users.urls')),
      url(r'^timecard/',include('timecard.urls')),
      #url(r'^login/auth0',include('login.urls')),
 
