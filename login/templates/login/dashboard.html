@@ -1,7 +1,8 @@
+{% load staticfiles %}
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!--Include the above in your HEAD tag -->
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -9,16 +10,26 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!-- Include the above in your HEAD tag -->
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- Include the above in your HEAD tag -->
 <head>
 
-</head>
+<!--<script src="=assets/js/jquery-2.0.0.min.js" type="text/javascript"></script> -->
+
+<!-- <script src="=assets/js/ajax.js" type="text/javascript"></script>  -->
+
+<script src="static/assets/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+<script src="{% static 'assets/js/jquery-2.0.0.min.js' %}"></script>
+<script src="{% static 'assets/js/ajax.js' %}"></script>
+<script src="static/assets/js/ajax.js" type="text/javascript"></script>
+
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<div class="container">
+<!--<div class="container">
     <div class="fb-profile">
         <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
         <img align="left" class="fb-image-profile thumbnail" src="{{ auth0User.extra_data.picture }}" alt="Profile image example"/>
@@ -31,20 +42,48 @@
 </div> <!-- /container -->
 
 
+
+
 <div class="container">
     <div class="row">
-  <div class="col-lg-6">
-         <h1 style="text-align: center" >Employees Search</h1>
-   <div class="input-group"  >
+      <h1 style="text-align: center" >Employees Search</h1>
 
-      <div class="input-group-btn">
+  <div class="col-lg-6">
+         
+   <div class="input-group">
+        {% csrf_token %}
+        
+        <div class="First Name">
+          <input type="text" placeholder="First Name" id="search_first" class="search"/>
+        </div>
+        {% csrf_token %}
+        <div class="Last Name">
+          <input type="text" placeholder="Last Name" id="search_last" class="search"/>
+        </div>
+        <div class="ID">
+          <input type="text" placeholder="ID Number" id="search_id" class="search"/>
+        </div>
+        <!--<div class="Gender">
+          <input type="radio" name="gender" id="search_gender" value="M" checked class="search"/>Male<br>
+          <input type="radio" name="gender" id="search_gender" value="F" class="search"/>Female<br>
+
+        </div>-->
+        
+        <div class="Submit Button">
+        <button type="button" id="button" class="button">Submit</button>
+        </div>
+        <ul id="search-results">
+
+        </ul>
+
+   <!--   <div class="input-group-btn">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Name <span class="caret"></span></button>
         <ul class="dropdown-menu">
     {#          <li><a href="#">Name</a></li>#}
           <li><a href="#">Employee ID</a></li>
         </ul>
       </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+    <!--  <input type="text" class="form-control" aria-label="...">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search" aria-hidden="true">

@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Departments(models.Model):
     dept_no = models.CharField(primary_key=True, max_length=4)
@@ -7,8 +8,11 @@ class Departments(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'departments'
+        app_label = "users"
 
+class Dept(models.Model):
+    dept_no = models.CharField(primary_key=True, max_length=4)
+    dept_name = models.CharField(unique=True, max_length=40)
 
 class DeptEmp(models.Model):
     emp_no = models.ForeignKey('Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)
@@ -18,8 +22,8 @@ class DeptEmp(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'dept_emp'
         unique_together = (('emp_no', 'dept_no'),)
+        app_label = "users"
 
 
 class DeptManager(models.Model):
@@ -30,22 +34,50 @@ class DeptManager(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'dept_manager'
+        app_label = "users"
         unique_together = (('emp_no', 'dept_no'),)
 
 
+#class Employees(models.Model):
+#    emp_no = models.IntegerField(primary_key=True)
+#    birth_date = models.DateField()
+#    first_name = models.CharField(max_length=14)
+#    last_name = models.CharField(max_length=16)
+#    gender = models.TextField()  # This field type is a guess.
+#    hire_date = models.DateField()
+#
+#    class Meta:
+#        app_label = "users"
+#        managed = False
+
+class Lift(models.Model):
+    name = models.CharField(max_length=100)
+    emp_id = models.IntegerField(primary_key=True, default=False)
+
+    def __str__(self):
+        return self.name
+
 class Employees(models.Model):
-    emp_no = models.IntegerField(primary_key=True)
-    birth_date = models.DateField()
-    first_name = models.CharField(max_length=14)
-    last_name = models.CharField(max_length=16)
-    gender = models.TextField()  # This field type is a guess.
-    hire_date = models.DateField()
+    emp_id = models.IntegerField(primary_key=True, default=False)
+    birth_date = models.DateField(default=timezone.now)
+    first_name = models.CharField(max_length=14, blank=True)
+    last_name = models.CharField(max_length=16, blank=True)
+    gender = models.TextField(blank=True) 
+    hire_date = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return self.first_name
+
+class Profiles(models.Model):
+    emp_id = models.IntegerField(primary_key=True, default=False)
+    birth_date = models.DateField(default=timezone.now)
+    first_name = models.CharField(max_length=14, blank=True)
+    last_name = models.CharField(max_length=16, blank=True)
+    gender = models.TextField(blank=True) 
+    hire_date = models.DateField(default=timezone.now)
 
     class Meta:
-        managed = False
-        db_table = 'employees'
-
+        app_label = "users"
 
 class Salaries(models.Model):
     emp_no = models.ForeignKey(Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
@@ -54,8 +86,8 @@ class Salaries(models.Model):
     to_date = models.DateField()
 
     class Meta:
+        app_label = "users"
         managed = False
-        db_table = 'salaries'
         unique_together = (('emp_no', 'from_date'),)
 
 
@@ -66,8 +98,8 @@ class Titles(models.Model):
     to_date = models.DateField(blank=True, null=True)
 
     class Meta:
+        app_label = "users"
         managed = False
-        db_table = 'titles'
         unique_together = (('emp_no', 'title', 'from_date'),)
 
 class AuthGroup(models.Model):

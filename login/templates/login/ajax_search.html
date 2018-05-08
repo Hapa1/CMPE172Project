@@ -1,0 +1,16 @@
+
+<div class="container">
+
+	{% for employee in employees %}
+
+
+		<li>
+		<a href="employee_profile/{{employee.emp_id}}/">
+		{{ employee.first_name }} {{ employee.last_name }}
+		</a>
+		</li><br>
+        
+        
+    {% endfor %}
+</div>
+	

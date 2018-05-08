@@ -31,31 +31,39 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoapp',
+        'NAME': 'easytimecard',
         'USER': 'django',
         'PASSWORD': 'se172fun',
         'HOST': 'localhost',
         'PORT': '5432',
-    },
-    'heroku10m': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8j3l2gjop3hc9',
-        'USER': 'odyqsityypfibg',
-        'PASSWORD': 'c5909e4502d332ff914e538ad8c3452bcf232906a77956938ce11cbb837018ff',
-        'HOST': '54.243.54.6',
-        'PORT': '5432',
-    },
-    'heroku10k': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dc6ueiibuujfnq',
-        'USER': 'zlxbacefnrpmmt',
-        'PASSWORD': '42babda6a369837b87e2f3fac9e1f236793fe5e45a845b85a3afaaafb8ea9b7f',
-        'HOST': '54.204.46.60',
-        'PORT': '5432',
+#    },
+#    'heroku10m': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'd8j3l2gjop3hc9',
+#        'USER': 'odyqsityypfibg',
+#        'PASSWORD': 'c5909e4502d332ff914e538ad8c3452bcf232906a77956938ce11cbb837018ff',
+#        'HOST': '54.243.54.6',
+#        'PORT': '5432',
+#    },
+#    'heroku10k': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'dc6ueiibuujfnq',
+#        'USER': 'zlxbacefnrpmmt',
+#        'PASSWORD': '42babda6a369837b87e2f3fac9e1f236793fe5e45a845b85a3afaaafb8ea9b7f',
+#        'HOST': '54.204.46.60',
+#        'PORT': '5432',
     }
 
 }
 
+WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')
+
+HAYSTACK_CONNECTIONS = {
+    'default':{
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': WHOOSH_INDEX,
+    }
+}
 
 # Application definition
 
@@ -71,6 +79,8 @@ INSTALLED_APPS = [
     'social_django',
     'EasyTimeCard',
     'users',
+    'whoosh',
+    'haystack',
 
 
 ]
@@ -88,6 +98,7 @@ AUTHENTICATION_BACKENDS = {
     'login.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend'
 }
+
 
 LOGIN_URL = "/login/auth0"
 LOGIN_REDIRECT_URL = "/dashboard"
