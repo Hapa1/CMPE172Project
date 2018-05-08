@@ -74,7 +74,7 @@ def salary_new(request, pk):
         if form.is_valid():
             salary = form.save(commit=False)
             profile = get_object_or_404(Employees, pk=pk)
-            salary.emp_no = profile.emp_id
+            salary.emp_no.emp_id = profile.emp_id
             salary.save()
             return HttpResponseRedirect('login/dashboard.html')
         else:
