@@ -18,10 +18,14 @@
     <div class="Employed">
         <h1> Date of Employment: {{ profile.hire_date }}  </h1>
         	  
+    </div><br>
+    <div class="Title">
+        <h1> Salaries  </h1>
+        	  
     </div>
-    <div class="Salaries">
+    <div class="salaries">
     {% for salary in salaries %}
-    {{ salary.id }} {{ salary.salary }} {{ salary.from_date }} {{ salary.to_date }}<br>   
+    ${{ salary.salary }} from {{ salary.from_date }} to {{ salary.to_date }}<br>   
     {% endfor %}
         	  
     </div>

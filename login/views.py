@@ -45,22 +45,21 @@ def search_employees(request):
 
         search_text_first = request.POST['search_text_first']
         search_text_last = request.POST['search_text_last']
-        #search_id = (request.POST['search_id'])
+        search_id = (request.POST['search_id'])
          
         
     else:
         search_text_first = ''
         search_text_last = ''     
-        
+        search_id = ''
     
     employee_list = Employees.objects.order_by('last_name')
 
     for employee in employee_list:
         employee.first_name = employee.first_name.lower()
 
-#employee_list.filter(emp_id__exact=search_id) &
-    employees_lower =  employee_list.filter(first_name__contains=search_text_first) & employee_list.filter(last_name__contains=search_text_last)    
-    top10 = employees_lower[:10]
+    employees_lower =  employee_list.filter(first_name__contains=search_text_first) & employee_list.filter(last_name__contains=search_text_last) & employee_list.filter(emp_id__contains=search_id)    
+    top10 = employees_lower[:20]
     
     return render_to_response('login/ajax_search.html',{
         'employees' : top10,
@@ -77,7 +76,7 @@ def employees_list(request):
 def employee_profile(request, pk):
     profile = get_object_or_404(Employees, pk=pk)
     salaries = Salary.objects.order_by('to_date')
-    return render(request, 'login/employee_profile.html', {'profile' : profile}, {'salaries': salaries},)
+    return render_to_response('login/employee_profile.html', {'salaries': salaries, 'profile' : profile})
 
 
 
