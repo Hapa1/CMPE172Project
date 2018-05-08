@@ -32,5 +32,4 @@ urlpatterns = [
      #url(r'^login/auth0',include('login.urls')),
 
 
-
 ]
