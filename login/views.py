@@ -74,7 +74,7 @@ def salary_new(request, pk):
         if form.is_valid():
             salary = form.save(commit=False)
             profile = get_object_or_404(Employees, pk=pk)
-            salary.emp_no = profile.emp_no
+            salary.emp_no = profile.emp_id
             salary.save()
             return HttpResponseRedirect('login/dashboard.html')
         else:
@@ -82,7 +82,7 @@ def salary_new(request, pk):
 
 def employees_list(request):
 
-    E_list = Employees.objects.order_by('emp_id')
+    E_list = Employees.objects.order_by('emp_no')
     return render(request, 'login/employee_list.html', {'Employees': E_list})
 
 def employee_profile(request, pk):
