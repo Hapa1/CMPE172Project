@@ -68,18 +68,6 @@ def search_employees(request):
 
         },)
 
-def salary_new(request, pk):
-    if request.method == "POST":
-        form = SalariesForm(request.POST)
-        if form.is_valid():
-            salary = form.save(commit=False)
-            profile = get_object_or_404(Employees, pk=pk)
-            salary.emp_no.emp_id = profile.emp_id
-            salary.save()
-            return HttpResponseRedirect('login/dashboard.html')
-        else:
-            return HttpResponseRedirect('login/dashboard.html')
-
 def employees_list(request):
 
     E_list = Employees.objects.order_by('emp_id')
