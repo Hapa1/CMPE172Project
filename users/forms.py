@@ -5,5 +5,5 @@ class SalariesForm(forms.ModelForm):
 
     class Meta:
         model = Salaries
-        fields = ('emp_no', 'salary', 'from_date', 'to_date')
+        fields = ('salary', 'from_date', 'to_date')
 

@@ -32,8 +32,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'easytimecard',
-        'USER': 'django',
-        'PASSWORD': 'se172fun',
+        'USER': 'postgres',
+        'PASSWORD': 'kayla123',
         'HOST': 'localhost',
         'PORT': '5432',
 #    },

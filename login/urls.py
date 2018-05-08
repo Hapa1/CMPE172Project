@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^', include('social_django.urls', )),
     url(r'^employee_profile/(?P<pk>\d+)/$', views.employee_profile ,name='profile'),
     url(r'^search', views.search_employees),
+    url(r'^employee_profile/(?P<pk>\d+)/salary_new/$', views.salary_new),
 ] 
