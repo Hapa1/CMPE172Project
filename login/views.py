@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from users.models import *
 from login.models import *
 from django.views.generic import *
-from haystack.query import SearchQuerySet
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response
 

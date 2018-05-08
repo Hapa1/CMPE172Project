@@ -29,7 +29,6 @@ urlpatterns = [
      url(r'^', include('login.urls')),
      url(r'^users/', include('users.urls')),
      url(r'^timecard/',include('timecard.urls')),
-     url(r'^search/', include('haystack.urls')),
      #url(r'^login/auth0',include('login.urls')),
 
 
