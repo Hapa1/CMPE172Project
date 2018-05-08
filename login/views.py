@@ -82,7 +82,7 @@ def salary_new(request, pk):
 
 def employees_list(request):
 
-    E_list = Employees.objects.order_by('emp_no')
+    E_list = Employees.objects.order_by('emp_id')
     return render(request, 'login/employee_list.html', {'Employees': E_list})
 
 def employee_profile(request, pk):
