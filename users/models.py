@@ -68,6 +68,12 @@ class Employees(models.Model):
     def __str__(self):
         return self.first_name
 
+class Salary(models.Model):
+    emp_no = models.ForeignKey(Employees, on_delete=models.CASCADE)
+    salary = models.IntegerField()
+    from_date = models.DateField()
+    to_date = models.DateField()
+
 class Profiles(models.Model):
     emp_id = models.IntegerField(primary_key=True, default=False)
     birth_date = models.DateField(default=timezone.now)
@@ -78,17 +84,6 @@ class Profiles(models.Model):
 
     class Meta:
         app_label = "users"
-
-class Salaries(models.Model):
-    emp_no = models.ForeignKey(Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
-    salary = models.IntegerField()
-    from_date = models.DateField()
-    to_date = models.DateField()
-
-    class Meta:
-        app_label = "users"
-        managed = False
-        unique_together = (('emp_no', 'from_date'),)
 
 
 class Titles(models.Model):

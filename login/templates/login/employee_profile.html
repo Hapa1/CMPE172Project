@@ -1,25 +1,35 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
+{% extends 'login/base.html' %}
+{% block content %}
 <div class="container">
 	<div class="row">
-	<table class=" table table-responsive table-striped table-bordered">
-      
+	
+     
 
         
     <div class="container">
-        <h1> {{ profile.first_name }} {{ profile.last_name }} </h1>
+    	
+        <h1><span class="glyphicon glyphicon-user" style="font-size:1.5em;"></span>  {{ profile.first_name }} {{ profile.last_name }} - {{ profile.emp_id }} </h1>
 
     </div>
+    <div class="Birth">
+        <h1> Date of Birth: {{ profile.birth_date }}  </h1>
+        	  
+    </div>
+    <div class="Employed">
+        <h1> Date of Employment: {{ profile.hire_date }}  </h1>
+        	  
+    </div>
+    <div class="Salaries">
+    {% for salary in salaries %}
+    {{ salary.id }} {{ salary.salary }} {{ salary.from_date }} {{ salary.to_date }}<br>   
+    {% endfor %}
+        	  
+    </div>
+
     
-        
-       
-    
-                
-        
+     
 
     </table>
 	</div>
 </div>
+{% endblock %}
