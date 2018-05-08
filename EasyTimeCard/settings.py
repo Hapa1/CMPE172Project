@@ -26,7 +26,7 @@ SECRET_KEY = '#x=hu30o(#sl9zy8po!(ghvcuza8#$rz5u586du4m$g1cq_#@s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'mngrapp.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 DATABASES = {
     'default': {
@@ -56,14 +56,7 @@ DATABASES = {
 
 }
 
-WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')
 
-HAYSTACK_CONNECTIONS = {
-    'default':{
-        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'PATH': WHOOSH_INDEX,
-    }
-}
 
 # Application definition
 
@@ -79,11 +72,8 @@ INSTALLED_APPS = [
     'social_django',
     'EasyTimeCard',
     'users',
-    'whoosh',
-    'haystack',
-
-
 ]
+
 SOCIAL_AUTH_TRAILING_SLASH = False                    # Remove end slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = 'awesomepawesome.auth0.com'
 SOCIAL_AUTH_AUTH0_KEY = 'E61bFrD2I6Dm3M5DfsdZtzNwCuBPIx0U'
