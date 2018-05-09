@@ -79,7 +79,6 @@ def employee_profile(request, pk):
     return render_to_response('login/employee_profile.html', {'salaries': salaries, 'profile' : profile})
 
 
-
 class AccountList(ListView):
     model = Employees
     paginate_by = 12
