@@ -69,7 +69,7 @@ class Employees(models.Model):
         return self.first_name
 
 class Salary(models.Model):
-    emp_no = models.ForeignKey(Employees, on_delete=models.CASCADE)
+    emp_id= models.ForeignKey(Employees, on_delete=models.CASCADE)
     salary = models.IntegerField()
     from_date = models.DateField()
     to_date = models.DateField()
