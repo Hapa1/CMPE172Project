@@ -8,7 +8,10 @@
       <h1 style="text-align: center" >Employees Search</h1>
 
   <div class="col-lg-6">
-         
+       
+   <div class="employee_new">  
+   <p><h3><span class="badge badge-primary"><a href="{% url 'employee_new'%}" >Add Employee</a></span></h3><p>
+   </div>
    <div class="input-group">
         {% csrf_token %}
         

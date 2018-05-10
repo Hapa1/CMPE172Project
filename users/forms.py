@@ -7,3 +7,5 @@ class SalariesForm(forms.ModelForm):
         model = Salaries
         fields = ('salary', 'from_date', 'to_date')
 
+       
+

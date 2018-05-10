@@ -31,11 +31,11 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'easytimecard',
+        'NAME': 'easytimecard2',
         'USER': 'postgres',
         'PASSWORD': 'kayla123',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
 #    },
 #    'heroku10m': {
 #        'ENGINE': 'django.db.backends.postgresql_psycopg2',
