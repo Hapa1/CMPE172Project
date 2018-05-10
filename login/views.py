@@ -102,7 +102,7 @@ def employee_new(request):
     if request.method == "POST":
         form = NewEmployeeForm(request.POST)
         if form.is_valid():
-            employee = form.save(commit=False)s
+            employee = form.save(commit=False)
             count = Employees.objects.count()+1
             employee.emp_id = count
             employee.save()
