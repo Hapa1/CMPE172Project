@@ -1,16 +1,16 @@
 
 <div class="container">
-
+<p>Returning results...</p>
+{% if employees.count > 0 %}
 	{% for employee in employees %}
-
-
-		
 		<a href="employee_profile/{{employee.emp_id}}/">
-		{{ employee.first_name }} {{ employee.last_name }} 
+		{{ employee.first_name }} {{ employee.last_name }} - {{ employee.emp_id }}
 		</a><br>
-		
+	{% endfor %}
+{% else %}	
+<p> Nothing Found </p>    
         
-        
-    {% endfor %}
+    
+{% endif %}
 </div>
 	

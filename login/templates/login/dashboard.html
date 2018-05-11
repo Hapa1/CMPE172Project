@@ -8,11 +8,19 @@
       <h1 style="text-align: center" >Employees Search</h1>
 
   <div class="col-lg-6">
-       
-   <div class="employee_new">  
-   <p><h3><span class="badge badge-primary"><a href="{% url 'employee_new'%}" >Add Employee</a></span></h3><p>
+
    </div>
-   <div class="input-group">
+   <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Search</a></li>
+    <li><a href="{% url 'employee_new'%}">New Employee</a></li>
+
+
+   </ul>
+  <div class="input-group">
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+      
+
         {% csrf_token %}
         
         <div class="First Name">
@@ -22,41 +30,21 @@
         <div class="Last Name">
           <input type="text" placeholder="Last Name" id="search_last" class="search"/>
         </div>
-        <div class="ID">
-          <input type="text" placeholder="ID Number" id="search_id" class="search"/>
-        </div>
-        <!--<div class="Gender">
-          <input type="radio" name="gender" id="search_gender" value="M" checked class="search"/>Male<br>
-          <input type="radio" name="gender" id="search_gender" value="F" class="search"/>Female<br>
 
-        </div>-->
-        
+        <p>
         <div class="Submit Button">
         <button type="button" id="button" class="button">Submit</button>
         </div>
+        </p>
         <ul id="search-results">
 
         </ul>
+      </div>
+  
 
-   <!--   <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Name <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-    {#          <li><a href="#">Name</a></li>#}
-          <li><a href="#">Employee ID</a></li>
-        </ul>
-      </div><!-- /btn-group -->
-    <!--  <input type="text" class="form-control" aria-label="...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search" aria-hidden="true">
-
-            </span>
-        </button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-
-</div><!-- /.row -->
+    </div>
+  </div>
+</div>
 
 </div>
 {% endblock %}

@@ -32,7 +32,7 @@ class Employees(models.Model):
     birth_date = models.DateField()
     first_name = models.CharField(max_length=14, blank=True)
     last_name = models.CharField(max_length=16, blank=True)
-    gender = models.TextField(blank=True) 
+    gender = models.TextField(blank=True, max_length=1) 
     hire_date = models.DateField(default=timezone.now)
 
     def __str__(self):

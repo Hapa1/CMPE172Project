@@ -39,30 +39,34 @@ def dashboard(request):
     #})
 
 def search_employees(request):
-    #E_list = SearchQuerySet().autocomplete(content_auto=request.POST.get('search_text', ''))
-    #return render_to_response('ajax_search.html', {'Employees': E_list})
     if request.method == "POST":
-
         search_text_first = request.POST['search_text_first']
         search_text_last = request.POST['search_text_last']
-        search_id = (request.POST['search_id'])
     else:
         search_text_first = ''
         search_text_last = ''     
-        search_id = ''
+
     employee_list = Employees.objects.order_by('last_name')
+    print ("hi!!!")
 
-    for employee in employee_list:
-        employee.first_name = employee.first_name.lower()
-
-    employees_lower =  employee_list.filter(first_name__contains=search_text_first) & employee_list.filter(last_name__contains=search_text_last) & employee_list.filter(emp_id__contains=search_id)    
-    top10 = employees_lower[:20]
+    employees_lower = employee_list.filter(first_name__contains=search_text_first) & employee_list.filter(last_name__contains=search_text_last)   
+    top10 = employees_lower[:25]
     
     return render_to_response('login/ajax_search.html',{
         'employees' : top10,
-        'search_text_first' : search_text_first,
-        'search_text_last' : search_text_last,
+        },)
 
+def search_id(request):
+    if request.method == "POST":
+        search_id = request.POST['search_text_id']
+    else:
+        search_id = 0
+
+    employee_list = Employees.objects.all()
+    employee = employee_list.filter(emp_id__exact=search_id)   
+
+    return render_to_response('login/ajax_search.html',{
+        'employees' : employee,
         },)
 
 def employees_list(request):
